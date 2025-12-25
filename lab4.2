@@ -1,0 +1,31 @@
+P = [
+    ['x', 'o', 'x'],
+    ['o', 'o', 'o'],
+    ['x', 'o', 'x']
+]
+
+
+def check_x_win(P):
+    # Проверка строк и столбцов
+    for i in range(3):
+        # Проверка строки
+        if P[i][0] == P[i][1] == P[i][2] == 'x':
+            return True
+        # Проверка столбца
+        if P[0][i] == P[1][i] == P[2][i] == 'x':
+            return True
+
+    # Проверка диагоналей
+    if P[0][0] == P[1][1] == P[2][2] == 'x':
+        return True
+    if P[0][2] == P[1][1] == P[2][0] == 'x':
+        return True
+
+    return False
+
+
+# Вывод результата
+if check_x_win(P):
+    print("ДА")
+else:
+    print("НЕТ")
