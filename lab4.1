@@ -1,0 +1,7 @@
+summa = 0
+spisok = input()
+spisok = list(map(int, spisok.split())) # [int(x) for x in spisok.split()]
+for element in spisok:
+    if element %2 != 0:
+        summa += element
+print(summa)
